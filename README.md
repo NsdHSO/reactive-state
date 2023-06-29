@@ -13,3 +13,6 @@
     IMHO it is not. But I got a book and I'm going through it.
 
 ## What problem does it solve?
+
+## Start Project
+    npm start 
