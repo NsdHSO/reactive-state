@@ -1,25 +1,59 @@
-let a = [1, 2, 3, 4, 5, 7, 6, 8, 9, 10];
+/* eslint-env es6 */
 
-let ad = a.reduce((a, b, current, array) => a * b);
-console.log(ad);
+class Button {
+  constructor(name) {
+    this.name = name
+    this.button = document.createElement('button')
+    this.button.innerText = name
+    this.button.addEventListener('click', this.click.bind(this))
+    this.renderer(this.button)
+  }
 
-// closure
-let acumulator = () => {
-  let acc = 0;
-  return {
-    add: (value) => (acc = acc + value),
-    get: () => acc,
-    addGlobal: (value)=> {
-        let x = 5
-        return value + x
-    }
-  };
-};
+  click() {
+    console.log('nda')
+  }
 
-let newHoldValue = acumulator();
-newHoldValue.add(4)
-newHoldValue.add(4)
-newHoldValue.add(4)
-var fa= 5
-console.log(newHoldValue.addGlobal(fa));
-console.log(newHoldValue.get());
+  renderer(element) {
+    console.log(element)
+    document.body.appendChild(element)
+    console.log('renderer ')
+  }
+}
+
+class Input {
+  constructor(elementId) {
+    this.element = document.createElement('input')
+    this.element.id = elementId
+    this.value = ''
+
+    // Bind the event listener to the input element
+    this.element.addEventListener('input', this.handleInput.bind(this))
+    this.render()
+  }
+
+  handleInput(event) {
+    this.value = event.target.value
+    console.log('Input value:', this.value)
+  }
+
+  getValue() {
+    return this.value
+  }
+
+  setValue(newValue) {
+    this.value = newValue
+    this.element.value = newValue
+  }
+
+  clear() {
+    this.setValue('')
+  }
+
+  render() {
+    document.body.appendChild(this.element)
+  }
+}
+
+const changeName = new Input('243')
+
+const newButton = new Button('Ivan')

@@ -1,0 +1,17 @@
+{
+  "printWidth": 80,                  // Maximum line width
+  "tabWidth": 2,                     // Number of spaces per indentation level
+  "useTabs": false,                  // Use spaces instead of tabs
+  "semi": true,                      // Add semicolons at the end of statements
+  "singleQuote": true,               // Use single quotes for strings
+  "quoteProps": "as-needed",         // Quote object properties only when necessary
+  "jsxSingleQuote": false,           // Use double quotes for JSX attributes
+  "trailingComma": "es5",            // Use trailing commas where valid in ES5
+  "bracketSpacing": true,            // Add spaces inside brackets ({ foo: bar })
+  "arrowParens": "always",           // Add parentheses around arrow function parameters
+  "requirePragma": false,            // Don't require a special comment for formatting
+  "insertPragma": false,             // Don't insert a special comment at the top of files
+  "proseWrap": "preserve",           // Maintain line breaks in Markdown files
+  "endOfLine": "true",               // Maintain consistent line endings
+  "htmlWhitespaceSensitivity": "css" // Preserve whitespace as much as possible
+}
