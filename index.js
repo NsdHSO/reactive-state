@@ -53,7 +53,8 @@ class Input {
     document.body.appendChild(this.element)
   }
 }
+function wordScore(word) {
+  return [...word].filter(v => v !== 'a').join('').length
+}
 
-const changeName = new Input('243')
-
-const newButton = new Button('Ivan')
+console.log(wordScore('Sami dsdsd dasd'))
