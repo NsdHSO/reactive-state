@@ -57,5 +57,14 @@ class Input {
 
 const cleanerWord = (c) => c.replace(/ +/g, '')
 const filterWord = (arr) => Array.from(arr).filter(char => char !== 'a')
+
+const joinedWords = arr => arr.join('')
+
 const joinedWord= (v)=> filterWord(v).join('')
 console.log(cleanerWord(joinedWord(['dasdd','dasdasd','dasdasd', 'dasdasd'])));
+
+
+const compose = (...fns) => x => fns.reduceRight((z, fn)=> fn(z), x)
+
+const wordScore = compose(cleanerWord, joinedWords, filterWord)
+console.log(wordScore(['dasda','dasdasd','dasdasd']));
